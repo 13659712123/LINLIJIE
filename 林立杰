@@ -1,0 +1,44 @@
+import java.util.Scanner;
+
+public class Calculator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("欢迎使用简单计算器，请输入第一个数字：");
+        double num1 = scanner.nextDouble();
+        
+        System.out.println("请选择要进行的运算：加(+), 减(-), 乘(*), 除(/)");
+        String operator = scanner.next();
+        
+        System.out.println("请输入第二个数字：");
+        double num2 = scanner.nextDouble();
+        
+        double result = 0;
+        
+        switch (operator) {
+            case "+":
+                result = num1 + num2;
+                break;
+            case "-":
+                result = num1 - num2;
+                break;
+            case "*":
+                result = num1 * num2;
+                break;
+            case "/":
+                if (num2 != 0) {
+                    result = num1 / num2;
+                } else {
+                    System.out.println("错误：除数不能为0");
+                    return;
+                }
+                break;
+            default:
+                System.out.println("错误：请输入有效的运算符");
+                return;
+        }
+        
+        System.out.println("计算结果为：" + result);
+    }
+}
+ 
